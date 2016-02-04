@@ -1,4 +1,4 @@
-# multipleImageUploadPHP
+# Multiple Image Upload and storage on server linked to datbase with PHP
 
 PHP code to uploade multiple images to a webserver and save the information to a database while making a six point check to each file uploaded. 
 
