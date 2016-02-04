@@ -82,11 +82,18 @@
 						
 						/*this is the prepare statement to insert the info in the database. I'm leaving out the Image_ID table column in the 
 						database because I have it set to autoincrement on row insertion. My database PDO handle is '$dbPDO' so change that 
-						to whatever you have yours as.*/
-						$insertImage = $dbPDO->prepare('INSERT INTO Issues_Images (Name, Path, Type, Size) VALUES (?, ?, ?, ?)');
+						to whatever you have yours as.
+						My tabe is structure in the following way:
+							Image_ID int(11) AUTO_INCREMENT
+							Name varchar(250)
+							Path varchar(350)
+							Type varchar(10)
+							Size int(11)
+						*/
+						$insertImage = $dbPDO->prepare('INSERT INTO Images (Name, Path, Type, Size) VALUES (?, ?, ?, ?)');
 						$insertImage->execute($imageArray);
 						
-						/debuggin echo statement to let you know the database had the info inserterd. Delete or comment out on production implementation
+						//debuggin echo statement to let you know the database had the info inserterd. Delete or comment out on production implementation
 						echo "Image inserted into DB." . " File number: " . $key . " File name: " . $_FILES["Image"]["name"][$key] ."<br /> <br />";
 					}catch(PDOException $e){
 						
