@@ -15,3 +15,5 @@ Checks the file size of the image
 Checks the file name to limit it to 225 characters
 
 Changes the file name to a fully unique file name to avoid over writing files with same names.
+
+The code is very raw and simple so that it can be copied over and implemented into other systems easily without any added bloatware to get in the way.
