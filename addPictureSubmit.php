@@ -48,8 +48,7 @@
 			}else{
 			
 				//where we will save the image. The first part grabs your base directory of your server. Edit the /img/ part to store images in whatever directory you want.
-				$customDir = "/img/";
-				$directory = dirname(__FILE__) . $customDir ;
+				$directory = dirname(__FILE__) . "/img/" ;
 
 				//check the length of file name and change it if it is too long. Important because file names can't have a file name longer than 250 characters.
 				if(strlen($imageName) > 225){
@@ -73,7 +72,7 @@
 					echo $imageMessage . "<br />";
 					
 					//This variable tells the database where you saved your image on the server and the name of it
-					$dbDirectory = $customDir . $imageName;
+					$dbDirectory = "img/" . $imageName;
 					
 					//store info into database
 					try{
