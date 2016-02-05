@@ -30,8 +30,9 @@
 			//Check if it is a valid image type. You can add extensions to the array to expand the valid types of images you want uploaded.
 			$validTypes = array('gif','jpg','jpe','jpeg','png');
 			$typeExt = pathinfo($imageName);
+			$ext = strtolower($typeExt['extension']);
 			//extension check
-			if(!in_array($typeExt['extension'], $validTypes)){
+			if(!in_array($ext, $validTypes)){
 				
 				$imageError = TRUE;
 				$imageMessage = "File uploaded is not a valid image type." . " File number: " . $key . " File name: " . $_FILES["Image"]["name"][$key];
